@@ -4,3 +4,4 @@ oslo.config
 redis
 prettytable
 requests
+scrappy
