@@ -1,0 +1,6 @@
+six>=1.7.0
+oslo.log
+oslo.config
+redis
+prettytable
+requests
