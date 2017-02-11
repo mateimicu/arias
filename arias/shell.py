@@ -6,6 +6,7 @@ import sys
 from oslo_log import log as logging
 
 from arias.cli import base as cli_base
+from arias.cli import commands as cli_commands
 from arias import config
 
 CONFIG = config.CONFIG
@@ -16,6 +17,7 @@ class AriasCli(cli_base.Application):
     """Command line application for interacting with InstaCli."""
 
     commands = [
+        (cli_commands.Spiders, "commands")
     ]
 
     def setup(self):
