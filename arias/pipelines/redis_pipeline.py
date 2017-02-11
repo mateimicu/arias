@@ -5,11 +5,13 @@ import json
 from arias.common import redisdb
 from arias.pipelines import base
 
+
 class RedisPipeline(base.BasePipeline):
 
     def __init__(self):
-        self._rc = redisdb.RedisConnection()
+        self._redis = redisdb.RedisConnection()
 
     def process_item(self, item, spider):
-        self._redis.rcon.hset(self._spider.name, str(key), 
+        key = self.get_key(item, spider)
+        self._redis.rcon.hset(spider.name, key, 
                               json.dumps(dict(item)))
