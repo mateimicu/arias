@@ -20,6 +20,7 @@ class AriasCli(cli_base.Application):
         (cli_commands.Spiders, "commands"),
         (cli_commands.Pipelines, "commands"),
         (cli_commands.Crawl, "commands"),
+        (cli_commands.Redis, "commands"),
     ]
 
     def setup(self):
