@@ -1,4 +1,4 @@
-"""Item class."""
+"""Item class for a car."""
 
 import scrapy
 
