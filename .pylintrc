@@ -30,7 +30,7 @@ include-ids=no
 symbols=no
 
 # Use multiple processes to speed up Pylint.
-jobs=1
+jobs=3
 
 # Allow loading of arbitrary C extensions. Extensions are imported into the
 # active Python interpreter and may run arbitrary code.
@@ -70,7 +70,7 @@ confidence=
 # --enable=similarities". If you want to run only the classes checker, but have
 # no Warning level messages displayed, use"--disable=all --enable=classes
 # --disable=W"
-disable=too-few-public-methods,duplicate-code,missing-docstring
+disable=too-few-public-methods,duplicate-code,no-self-use
 
 
 [REPORTS]
@@ -142,7 +142,7 @@ expected-line-ending-format=
 [VARIABLES]
 
 # Tells whether we should check for unused import in __init__ files.
-init-import=no
+init-import=yes
 
 # A regular expression matching the name of dummy variables (i.e. expectedly
 # not used).
@@ -201,7 +201,7 @@ bad-names=foo,bar,baz,toto,tutu,tata
 name-group=
 
 # Include a hint for the correct naming format with invalid-name
-include-naming-hint=no
+include-naming-hint=yes
 
 # Regular expression matching correct function names
 function-rgx=[a-z_][a-z0-9_]{2,30}$
@@ -341,6 +341,7 @@ deprecated-modules=regsub,TERMIOS,Bastion,rexec
 import-graph=
 
 # Create a graph of external dependencies in the given file (report RP0402 must
+       setuptools==32
 # not be disabled)
 ext-import-graph=
 
@@ -371,7 +372,7 @@ max-branches=12
 max-statements=50
 
 # Maximum number of parents for a class (see R0901).
-max-parents=7
+max-parents=10
 
 # Maximum number of attributes for a class (see R0902).
 max-attributes=7
