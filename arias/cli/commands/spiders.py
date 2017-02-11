@@ -18,7 +18,7 @@ SpiderInfo = collections.namedtuple("SpiderInfo", "name, websites, description s
 
 class _ListSpiders(cli_base.Command):
 
-    """Add a new API client."""
+    """List the spiders."""
 
     def setup(self):
         """Extend the parser configuration in order to expose this command."""
@@ -27,7 +27,7 @@ class _ListSpiders(cli_base.Command):
         parser.set_defaults(work=self.run)
 
     def _work(self):
-        """Add a new API client."""
+        """List the spiders."""
         raw_spiders = spider_factory.SpiderFactory.get_items()
         spiders = []
         for spider in raw_spiders:
