@@ -1,9 +1,11 @@
 """Dmoz test pipelate to save an Item."""
 
+from arias.pipelines import base
+
 import json
 
 
-class JsonWriterPipeline(object):
+class JsonWriterPipeline(base.BasePipeline):
     def __init__(self):
         self.file = open('items.jl', 'wb')
 

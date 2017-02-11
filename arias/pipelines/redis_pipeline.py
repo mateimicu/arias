@@ -2,12 +2,11 @@
 
 import json
 
-from scrapy.exceptions import DropItem
-
 from arias.common import redisdb
+from arias.pipelines import base
 from arias.items import car
 
-class CarPipeline(object):
+class CarPipeline(base.BasePipeline):
 
     def __init__(self):
         self._rc = redisdb.RedisConnection()
