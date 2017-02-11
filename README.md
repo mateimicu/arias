@@ -25,8 +25,8 @@ Quick Start
 
 # genetare a config file
 ~ arias/ $ oslo-config-generator --config-file etc/arias/arias-config-generator.conf
-~ arias/ $ mkdir /etc/arias/
+~ arias/ $ sudo mkdir /etc/arias/
 
 # copy the config file in /etc/arias
-~ $ cp etc/arias/arias.conf.sample /etc/arias/arias.conf
+~ arias/ $ sudo cp etc/arias/arias.conf.sample /etc/arias/arias.conf
 ```
