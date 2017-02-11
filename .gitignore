@@ -91,3 +91,6 @@ ENV/
 
 AUTHORS
 ChangeLog
+
+# Config file for the project
+etc/arias/arias.conf.sample
