@@ -19,7 +19,7 @@ import json
 class AriasTasks(base.BaseTask):
     """Structure of a Task."""
 
-    def __init__(self):
+    def __init__(self, spider, pipeline):
         super(AriasTasks, self).__init__()
         self._name = self.__class__.__name__
 
@@ -52,7 +52,6 @@ class AriasTasks(base.BaseTask):
         # Add the spider to the crawler process
         self._crawler_process.crawl(self._spider)
 
-    @abc.abstractmethod
     def _work(self):
         """Start the crawling process."""
         LOG.info("Started crawling {}".format(self._name))
