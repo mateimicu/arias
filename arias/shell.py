@@ -17,7 +17,8 @@ class AriasCli(cli_base.Application):
     """Command line application for interacting with InstaCli."""
 
     commands = [
-        (cli_commands.Spiders, "commands")
+        (cli_commands.Spiders, "commands"),
+        (cli_commands.Pipelines, "commands"),
     ]
 
     def setup(self):
