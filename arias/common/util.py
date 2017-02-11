@@ -1,6 +1,7 @@
 """A collection of utilities used across the project."""
 
 import importlib
+import prettytable
 
 from arias.common import exception
 
@@ -67,3 +68,7 @@ class BaseFactory(object):
                 all_items.append(item)
 
         return all_items
+
+def empty_table():
+    """Return an empty table."""
+    return prettytable.PrettyTable(["No items in this namespace."])
