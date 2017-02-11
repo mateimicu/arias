@@ -17,10 +17,10 @@ Quick Start
 ~ arias/ $ virtualenv .venv/arias
 
 # activate the venv
-~ arias/ $ source .venv/arestor/bin/activate
+~ arias/ $ source .venv/arias/bin/activate
 
 # install the project
-~ arias/ $ pip install ../arestor
+~ arias/ $ pip install ../arias
 ~ arias/ $ python setup.py install
 
 # genetare a config file
