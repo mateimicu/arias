@@ -54,3 +54,9 @@ class NotSupported(AriasException):
     """The functionality required is not available in the current context."""
 
     template = "%(feature)s is not available in %(context)s."
+
+class InvalidName(AriasException):
+
+    """The functionality required is not available in the current context."""
+
+    template = "%(name)s not found in the %(list_name) list."
