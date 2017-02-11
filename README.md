@@ -1,2 +1,32 @@
-Cars Scrap
-=========
+Arias
+======
+
+Quick Start
+==========
+
+```bash
+# install deps
+~ $ sudo apt-get install redis-server vim git python-dev -y
+~ $ pip install virtualenv
+
+# clone project
+~ $ git clone https://github.com/micumatei/arias
+~ $ cd arias
+
+# create a virtual env for this project
+~ arias/ $ virtualenv .venv/arias
+
+# activate the venv
+~ arias/ $ source .venv/arestor/bin/activate
+
+# install the project
+~ arias/ $ pip install ../arestor
+~ arias/ $ python setup.py install
+
+# genetare a config file
+~ arias/ $ oslo-config-generator --config-file etc/arias/arias-config-generator.conf
+~ arias/ $ mkdir /etc/arias/
+
+# copy the config file in /etc/arias
+~ $ cp etc/arias/arias.conf.sample /etc/arias/arias.conf
+```
