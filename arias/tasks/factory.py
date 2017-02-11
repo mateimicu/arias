@@ -1,13 +1,14 @@
 """Factory for tasks."""
 
-from arias.tasks import task
-from arias.spiders import factory as spider_factory
-from arias.pipelines import factory as pipeline_factory
 from arias.common import exception
+from arias.pipelines import factory as pipeline_factory
+from arias.spiders import factory as spider_factory
+from arias.tasks import task
+
 
 def get_task(spider_name, pipeline_name):
     """Get a new Task object.
-    
+
     :param spider_name: The spider name you want to use.
     :param pipeline_name: The pipeline name you want to use
     """
@@ -35,6 +36,3 @@ def get_task(spider_name, pipeline_name):
             name=pipeline_name, list_name="pipelines")
 
     return task.AriasTasks(spider=spider, pipeline=pipeline)
-
-
-

@@ -3,7 +3,9 @@
 from arias.common import util
 from arias.pipelines import base
 
+
 class PipelineFactory(util.BaseFactory):
+    """Facoty for All pipeline classes."""
 
     # The base class for all the items
     BASE_CLASS = base.BasePipeline

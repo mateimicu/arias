@@ -3,14 +3,11 @@ Crawl CLI.
 """
 
 from __future__ import print_function
-import collections
 
 from oslo_log import log as logging
-import prettytable
 
-from arias.tasks import factory as task_factory
 from arias.cli import base as cli_base
-from arias.common import util
+from arias.tasks import factory as task_factory
 
 LOG = logging.getLogger(__name__)
 
@@ -34,7 +31,7 @@ class _StartCrawler(cli_base.Command):
     def _work(self):
         """Start the crawling."""
         task = task_factory.get_task(
-            spider_name=self.args.spider, 
+            spider_name=self.args.spider,
             pipeline_name=self.args.pipeline)
 
         return task.run()
@@ -46,6 +43,7 @@ class _StartCrawler(cli_base.Command):
     def _on_task_fail(self, exc):
         """What to do if the crawling fails."""
         LOG.error("Crawling failed with message %(msg)s" % exc)
+
 
 class Crawl(cli_base.Group):
 

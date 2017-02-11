@@ -1,14 +1,14 @@
 """Base class for workers."""
 
-from arias.common import exception
-
 import abc
-import multiprocessing
+
+from arias.common import exception
 
 import six
 
+
 @six.add_metaclass(abc.ABCMeta)
-class BaseTask(multiprocessing.Process):
+class BaseTask(object):
     # NOTE(mmicu): We might use celery for this tasks in the future
     # keep this class as clean a posible
 

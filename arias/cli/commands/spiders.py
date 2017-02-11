@@ -14,7 +14,9 @@ from arias.spiders import factory as spider_factory
 
 LOG = logging.getLogger(__name__)
 
-SpiderInfo = collections.namedtuple("SpiderInfo", "name, websites, description start_urls")
+SpiderInfo = collections.namedtuple("SpiderInfo",
+                                    "name websites description start_urls")
+
 
 class _ListSpiders(cli_base.Command):
 
@@ -42,9 +44,13 @@ class _ListSpiders(cli_base.Command):
 
     def _on_task_done(self, result):
         """What to execute after successfully finished processing a task."""
-        table = prettytable.PrettyTable(["Name", "Websites", "Description", "Start Urls"])
+        table = prettytable.PrettyTable(
+            ["Name", "Websites", "Description", "Start Urls"])
         for spider in result:
-            table.add_row([spider.name, spider.websites, spider.description, spider.start_urls])
+            table.add_row([spider.name,
+                           spider.websites,
+                           spider.description,
+                           spider.start_urls])
         print(table)
 
 

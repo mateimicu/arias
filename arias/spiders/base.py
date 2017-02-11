@@ -1,8 +1,15 @@
 """Base spider."""
 
+import abc
+
 import scrapy
+import six
 
 
+@six.add_metaclass(abc.ABCMeta)
 class BaseSpider(scrapy.Spider):
-    # TODO(mmicu): Implement the interface
-    pass
+    """Base class for all the spiders."""
+
+    @abc.abstractmethod
+    def parse(self, response):
+        """Parse the response."""
