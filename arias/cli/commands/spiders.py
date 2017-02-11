@@ -34,7 +34,7 @@ class _ListSpiders(cli_base.Command):
             cooked_spider = SpiderInfo(
                 name=spider.name,
                 websites=util.join_with_space(spider.allowed_domains),
-                description=spider.__doc__,
+                description=spider.__doc__ if spider.__doc__ else "",
                 start_urls=util.join_with_space(spider.start_urls))
 
             spiders.append(cooked_spider)
