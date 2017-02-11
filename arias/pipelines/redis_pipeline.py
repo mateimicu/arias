@@ -22,5 +22,6 @@ class RedisPipeline(base.BasePipeline):
         Save the item in the redis db.
         """
         key = self.get_key(item, spider)
-        self._redis.rcon.hset(spider.name, key,
+        namespace = self.get_namespace(spider)
+        self._redis.rcon.hset(namespace, key, 
                               json.dumps(dict(item)))
