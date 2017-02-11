@@ -1,3 +1,4 @@
+"""Version info."""
 import pbr.version
 
 

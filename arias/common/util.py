@@ -1,7 +1,9 @@
 """A collection of utilities used across the project."""
 
-from arias.common import exception
 import importlib
+
+from arias.common import exception
+
 
 def get_attribute(root, attribute):
     """Search for the received attribute name in the object tree.
@@ -22,6 +24,7 @@ def get_attribute(root, attribute):
     raise exception.AriasException("The %(attribute)r attribute is "
                                    "missing from the object tree.",
                                    attribute=attribute)
+
 
 def join_with_space(items):
     """Join with `, ` the items.
@@ -46,11 +49,10 @@ class BaseFactory(object):
     # The name of the factory
     NAME = ""
 
-
     @classmethod
     def get_items(cls):
         """Return a list with all the items."""
-        all_items= []
+        all_items = []
         for item_module in cls.ITEMS:
             module_name = "{}.{}".format(cls.PREFIX, item_module)
             module = importlib.import_module(module_name)
@@ -58,7 +60,7 @@ class BaseFactory(object):
                 item = getattr(module, item)
                 try:
                     if (not issubclass(item, cls.BASE_CLASS) or
-                    item == cls.BASE_CLASS):
+                            item == cls.BASE_CLASS):
                         continue
                 except (exception.AriasException, TypeError):
                     continue

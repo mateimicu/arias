@@ -7,7 +7,9 @@ Factory to get all the spiders.
 from arias.common import util
 from arias.spiders import base
 
+
 class SpiderFactory(util.BaseFactory):
+    """Factory to get all the spiders."""
 
     # The base class for all the items
     BASE_CLASS = base.BaseSpider
@@ -22,4 +24,3 @@ class SpiderFactory(util.BaseFactory):
 
     # The name of the factory
     NAME = "spider_factory"
-

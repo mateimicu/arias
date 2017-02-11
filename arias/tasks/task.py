@@ -1,20 +1,15 @@
 """Base class for workers."""
 
-import abc
-
 from oslo_log import log as logging
 from scrapy import crawler
-from scrapy import settings 
+from scrapy import settings
 
-from arias.common import redisdb
-from arias.tasks import base
-from arias.common import exception
 from arias import config as arias_config
+from arias.tasks import base
 
 CONFIG = arias_config.CONFIG
 LOG = logging.getLogger(__name__)
 
-import json
 
 class AriasTasks(base.BaseTask):
     """Structure of a Task."""
@@ -35,14 +30,12 @@ class AriasTasks(base.BaseTask):
             settings=self._settings)
 
     def _on_task_done(self, result):
-        """Store each item """
-        LOG.info("Task done {name}".format(
-                 name=self.name))
+        """Store each item."""
+        LOG.info("Task done {name}".format(name=self.name))
 
     def _on_task_fail(self, exc):
         """Log the error and set the status."""
-        LOG.error("Task failed {name} with error {error}".format(
-                  name=self.name, error=exc))
+        LOG.error("Task failed {} with error {}".format(self.name, exc))
 
     def prologue(self):
         """Executed once before the command starts."""

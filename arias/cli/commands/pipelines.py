@@ -9,12 +9,12 @@ from oslo_log import log as logging
 import prettytable
 
 from arias.cli import base as cli_base
-from arias.common import util
 from arias.pipelines import factory as pipelines_factory
 
 LOG = logging.getLogger(__name__)
 
 PipelineInfo = collections.namedtuple("PipelineInfo", "name, description")
+
 
 class _ListPipeline(cli_base.Command):
 

@@ -2,7 +2,9 @@
 
 import scrapy
 
+
 class Car(scrapy.Item):
+    """Car item."""
     title = scrapy.Field()
     link = scrapy.Field()
     desc = scrapy.Field()
