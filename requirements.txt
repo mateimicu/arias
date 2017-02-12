@@ -4,5 +4,6 @@ oslo.config
 redis
 prettytable
 requests
+cherrypy
 scrapy
 twisted
