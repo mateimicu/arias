@@ -3,16 +3,15 @@ Spiders CLI.
 """
 
 from __future__ import print_function
-import collections
 
 from oslo_log import log as logging
 import prettytable
 
 from arias.cli import base as cli_base
-from arias.common import util
 from arias.spiders import util as spiders_util
 
 LOG = logging.getLogger(__name__)
+
 
 class _ListSpiders(cli_base.Command):
 

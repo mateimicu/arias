@@ -1,3 +1,4 @@
+"""Server CLI."""
 import os
 import signal
 

@@ -23,5 +23,5 @@ class RedisPipeline(base.BasePipeline):
         """
         key = self.get_key(item, spider)
         namespace = self.get_namespace(spider)
-        self._redis.rcon.hset(namespace, key, 
+        self._redis.rcon.hset(namespace, key,
                               json.dumps(dict(item)))
