@@ -10,13 +10,9 @@ import prettytable
 
 from arias.cli import base as cli_base
 from arias.common import util
-from arias.spiders import factory as spider_factory
+from arias.spiders import util as spiders_util
 
 LOG = logging.getLogger(__name__)
-
-SpiderInfo = collections.namedtuple("SpiderInfo",
-                                    "name websites description start_urls")
-
 
 class _ListSpiders(cli_base.Command):
 
@@ -30,17 +26,7 @@ class _ListSpiders(cli_base.Command):
 
     def _work(self):
         """List the spiders."""
-        raw_spiders = spider_factory.SpiderFactory.get_items()
-        spiders = []
-        for spider in raw_spiders:
-            cooked_spider = SpiderInfo(
-                name=spider.name,
-                websites=util.join_with_space(spider.allowed_domains),
-                description=spider.__doc__ if spider.__doc__ else "",
-                start_urls=util.join_with_space(spider.start_urls))
-
-            spiders.append(cooked_spider)
-        return spiders
+        return spiders_util.get_spiders_info()
 
     def _on_task_done(self, result):
         """What to execute after successfully finished processing a task."""

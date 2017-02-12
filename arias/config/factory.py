@@ -3,6 +3,7 @@
 _OPT_PATHS = (
     'arias.config.default.AriasOptions',
     'arias.config.redis.RedisOptions',
+    'arias.config.api.AriasAPIOptions',
 )
 
 

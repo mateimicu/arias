@@ -17,9 +17,10 @@ class AriasCli(cli_base.Application):
     """Command line application for interacting with InstaCli."""
 
     commands = [
-        (cli_commands.Spiders, "commands"),
-        (cli_commands.Pipelines, "commands"),
         (cli_commands.Crawl, "commands"),
+        (cli_commands.Pipelines, "commands"),
+        (cli_commands.Spiders, "commands"),
+        (cli_commands.Server, "commands"),
         (cli_commands.Redis, "commands"),
     ]
 
