@@ -10,6 +10,7 @@ from arias.common import util
 SpiderInfo = collections.namedtuple("SpiderInfo",
                                     "name websites description start_urls")
 
+
 def get_spiders_info():
     """Get a list with all the spiders."""
     raw_spiders = spider_factory.SpiderFactory.get_items()
@@ -23,4 +24,3 @@ def get_spiders_info():
 
         spiders.append(cooked_spider)
     return spiders
-

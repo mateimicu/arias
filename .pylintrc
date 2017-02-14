@@ -30,7 +30,7 @@ include-ids=no
 symbols=no
 
 # Use multiple processes to speed up Pylint.
-jobs=3
+jobs=1
 
 # Allow loading of arbitrary C extensions. Extensions are imported into the
 # active Python interpreter and may run arbitrary code.
@@ -70,7 +70,7 @@ confidence=
 # --enable=similarities". If you want to run only the classes checker, but have
 # no Warning level messages displayed, use"--disable=all --enable=classes
 # --disable=W"
-disable=too-few-public-methods,duplicate-code,no-self-use
+disable=too-few-public-methods,duplicate-code,missing-docstring
 
 
 [REPORTS]
@@ -142,7 +142,7 @@ expected-line-ending-format=
 [VARIABLES]
 
 # Tells whether we should check for unused import in __init__ files.
-init-import=yes
+init-import=no
 
 # A regular expression matching the name of dummy variables (i.e. expectedly
 # not used).
@@ -194,14 +194,14 @@ bad-functions=map,filter,input
 good-names=i,j,k,ex,Run,_,GET,PUT,POST,DELETE,HEAD,DELETE,OPTIONS,CONNECT
 
 # Bad variable names which should always be refused, separated by a comma
-bad-names=foo,bar,baz,toto,tutu,tata
+bad-names=foo,bar,baz,toto,tutu,tata,STRING_TYPE
 
 # Colon-delimited sets of names that determine each other's naming style when
 # the name regexes allow several styles.
 name-group=
 
 # Include a hint for the correct naming format with invalid-name
-include-naming-hint=yes
+include-naming-hint=no
 
 # Regular expression matching correct function names
 function-rgx=[a-z_][a-z0-9_]{2,30}$
@@ -341,7 +341,6 @@ deprecated-modules=regsub,TERMIOS,Bastion,rexec
 import-graph=
 
 # Create a graph of external dependencies in the given file (report RP0402 must
-       setuptools==32
 # not be disabled)
 ext-import-graph=
 

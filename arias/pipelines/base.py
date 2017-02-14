@@ -13,17 +13,18 @@ import six
 class BasePipeline(object):
     """Base class for All the pipelines."""
 
-    def get_key(self, item, spider):
-        """Key format for every item."""
+    @staticmethod
+    def get_key(item, spider):
         """Key format for every item.
-        
+
         :param item: The item we want to store
         :param spider: The spider that fetched the item
         """
-        return constant.KEY_FORMAT.format(name=spider.name, 
-                id=item.get("id", str(uuid.uuid4())))
+        return constant.KEY_FORMAT.format(
+            name=spider.name, id=item.get("id", str(uuid.uuid4())))
 
-    def get_namespace(self, spider):
+    @staticmethod
+    def get_namespace(spider):
         """Namespace format for every spider.
 
         :param spider: The spider that fetche the item

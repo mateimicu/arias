@@ -3,7 +3,6 @@ Redis CLI.
 """
 
 from __future__ import print_function
-import collections
 import json
 
 from oslo_log import log as logging
@@ -26,7 +25,7 @@ class _ListNamespaces(cli_base.Command):
         parser = self._parser.add_parser(
             "list", help="List the available namespaces.")
         parser.add_argument(
-            "--match", dest="match", default="*", 
+            "--match", dest="match", default="*",
             help="Regex expresion to match the namespace.")
         parser.set_defaults(work=self.run)
 
@@ -38,8 +37,10 @@ class _ListNamespaces(cli_base.Command):
         namespaces = list(redis_con.rcon.scan_iter(match=match))
 
         # eliminte the prefix
-        namespaces = [namespace.split(constant.NAMESPACE_FORMAT.format(""), 1)[-1] for
-                        namespace in namespaces]
+        namespaces = [
+            namespace.split(constant.NAMESPACE_FORMAT.format(""), 1)[-1] for
+            namespace in namespaces
+        ]
         return namespaces
 
     def _on_task_done(self, result):
@@ -59,7 +60,7 @@ class _ShowNamespaces(cli_base.Command):
         parser = self._parser.add_parser(
             "show", help="Show the items from a namespace")
         parser.add_argument(
-            "--namespace", dest="namespace", required=True, 
+            "--namespace", dest="namespace", required=True,
             help="The name of the namespace.")
         parser.set_defaults(work=self.run)
 

@@ -69,6 +69,17 @@ class BaseFactory(object):
 
         return all_items
 
+
 def empty_table():
     """Return an empty table."""
     return prettytable.PrettyTable(["No items in this namespace."])
+
+
+def get_unicode_string_type():
+    """Get the unicode string type."""
+    try:
+        # PY2.x
+        return unicode
+    except NameError:
+        # PY3.x
+        return str

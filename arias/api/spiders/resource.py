@@ -9,16 +9,16 @@ from arias.spiders import util as spiders_util
 
 LOG = logging.getLogger(__name__)
 
+
 class ListSpiders(base_api.Resource):
+    """List All spiders."""
 
     exposed = True
 
-    """List All spiders."""
-
+    @staticmethod
     @cherrypy.tools.json_out()
-    def GET(self, match="*"):
+    def GET():
         """List the spiders."""
-        connection = self._redis.rcon
         spiders = spiders_util.get_spiders_info()
 
         response = {"spiders": [spider._asdict() for spider in spiders]}
