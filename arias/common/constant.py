@@ -11,3 +11,6 @@ TASK_DONE = "done"
 TASK_FAILED = "failed"
 
 PID_TMP_FILE = "/tmp/arias.pid"
+
+DOCKER_BASE_URL = "unix://var/run/docker.sock"
+DOCKER_STOP_TIMEOUT = 5

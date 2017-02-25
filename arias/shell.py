@@ -18,6 +18,7 @@ class AriasCli(cli_base.Application):
 
     commands = [
         (cli_commands.Crawl, "commands"),
+        (cli_commands.Deploy, "commands"),
         (cli_commands.Pipelines, "commands"),
         (cli_commands.Spiders, "commands"),
         (cli_commands.Server, "commands"),
